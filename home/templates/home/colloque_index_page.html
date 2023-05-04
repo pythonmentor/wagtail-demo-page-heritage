@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags %}
+
+{% block content %}
+<h1>{{ self.title }}</h1>
+<p>Bienvenue sur le template de la page des colloques</p>
+<ul>
+    {% for colloque in colloques %}
+        <li><a href="{% pageurl colloque %}">{{ colloque.title }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock content %}
